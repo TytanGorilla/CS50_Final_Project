@@ -1,43 +1,40 @@
-# Spontaneous Training Split Creator
+# Basic Fitness Training Focus Specifier App
 ## Video Demo:  <URL HERE>
-### Description: A prompt selection questionnaire that quickly generates a training split entry point with a training template recommendation for those too busy to consider their training needs. Use this application to synthesis the most likely to be most productive route for getting on with your fitness rather than being halted in a guagmire of self doubting questions.
+### Description: A prompt based selection questionnaire that quickly generates a training split entry point, ie focus in to the target muscles using questions.
 
-#### TODO
-Spec Project needs, find appropriate libraries for use within projects.py -> to be injected via: `pip freeze > requirements.txt`
-https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
-In .md file use Markdown to style, enrich & embbed useful info to learn how.
+This functionality is for those too busy to consider their training needs and who need a nudge in the right direction.
 
-Libraries to potentially use due to needs/usecase:
-1) Pytest - testing my own code, and guiding me to code defensively.
-2) mypy - catch errors earlier by using type hints.
-3) tabulate - print esay to read tables
-4) cowsay for some character interaction.
+Use this application to synthesis the most likely to be most productive route for getting on with your fitness focus rather than being halted in a guagmire of self doubting questions.
 
-**Rough concept of logic with problem at hand**
+## Introduction
 
-A person has a need to do the most productive training they can possibly do, but they do not know or desire to solve for what that would be if their goal was to
-illict a robust grow stimulus to them, and perhaps in a very specific way. They also need that answer 5 minutes ago, as they now have x time left to accomplish said specific goal.
+This is a basic CLI prompt app.
+To run this, you need to install dependencies listed in the [requirement.txt](/project/requirements.txt)
 
-The app aims to understand the user's position quite literally, so it can acquire markers/constraints and recommend most productive recommended course of action, and the steps there after. Would be cool to implement a 30s barrage of questions, the more the merrier, but no issue with less, just less clarity. So would need a timer to condense time of solution being presented.
+### Install
 
-6s per question, 30s total.
+Use the command :```sudo pip install -r requirements.txt```
 
-1) If you could improve one aspect of your body, what would it be? (Acquire inital heading)
-A list of the general body parts (Neck, Traps, Shoulders, Arms, Chest, Abs, Back, Legs, Cardio, Composition)
-You haven't trained that part of the body (except cardio, composition) in the past 2 days?
+### Running application
 
-Further clarify the selected body part, and offer 2nd iteration of quick questions:
-2)  Neck (Neck - go see Jeff Nipperd)
-    Traps (Upper, Mid, Lower)
-    Shoulders (Anterior, Lateral, Posterior)
-    Arms (Bicep, Tricep, Brachialis, Forearms)
-    Chest (Upper, Mid, Lower) -> (Inner, Mid, Outer)
-    Abs (Upper, Lower, Obliques, Internal)
-    Back (Upper, Mid, Lower)
-    Legs (Upper, Lower) -> (Glutes, Hamstrings, Quads) / (Calves = Gastrocnemius, Solues, Tiialis Anterior)
+Use the command :```python project.py```
 
-3) Acquire time available for honest training today?
-Anything lower than 10mins, might not be worth your effort.
-!<10min and each exercise has its own amount of time needed or used, so a budget.
-Perhaps some function/class that can apportion exercises according to their weighting and populate a session with x exercises, x sets per exercise.
+### Useage limits
 
+The project in question is not a commercial output, it is a certification project, so it has design limits.
+
+The main limitation when confronted with using this app is the requirement to input numbers present in each guiding prompt.
+
+Failure to doing so will raise ValueError, and stop the application mid-step and will require, following instructions to arrive at one of the many endpoint specializiations.
+
+## Details & Testing
+
+If curious about the unit testing, ensure that [test_project.py](/project/test_project.py) is present with [project.py](/project/project.py)
+
+### Running tests with pytest
+
+If all is well and the local folder has requiste files, run the tests with commands below:
+
+```pytest test_project.py```
+
+For additional test, you can also use ```mypy project.py``` which was used in conjunction with type hints.
